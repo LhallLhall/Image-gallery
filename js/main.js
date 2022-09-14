@@ -6,11 +6,11 @@ const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
 const images = [
-    'img/pic1.jpg',
-    'img/pic2.jpg',
-    'img/pic3.jpg',
-    'img/pic4.jpg',
-    'img/pic5.jpg'
+    `img/pic1.jpg`,
+    `img/pic2.jpg`,
+    `img/pic3.jpg`,
+    `img/pic4.jpg`,
+    `img/pic5.jpg`
 ]
 /* Declaring the alternative text for each image file */
 const alts = {
@@ -30,5 +30,17 @@ newImage.addEventListener('click', e => {
     displayedImage.src - e.target.src;
     displayedImage.src = e.target.alt;
 })
-}
+} 
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', () => {
+    if (btnClass === 'dark'){
+    const btnClass = btn.getAttribute('class');
+    btn.setAttribute('class', 'light');
+    btn.textContent = 'Lighten';
+    overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
+    } else {
+    btn.setAttribute('class', 'dark');
+    btn.textContent = 'Darken';
+    overlay.style.backgroundColor = 'rgba(0,0,0,)';
+    }
+})
