@@ -21,10 +21,14 @@ const alts = {
     'img/pic5.jpg' : 'Large moth on a leaf'
 }
 /* Looping through images */
-
+for (const image of images) {
 const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
+newImage.setAttribute('src', `$(image)`);
+newImage.setAttribute('alt', alts[image]);
 thumbBar.appendChild(newImage);
-
+newImage.addEventListener('click', e => {
+    displayedImage.src - e.target.src;
+    displayedImage.src = e.target.alt;
+})
+}
 /* Wiring up the Darken/Lighten button */
